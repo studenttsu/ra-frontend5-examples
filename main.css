@@ -50,6 +50,8 @@ body {
     margin: 0;
 }
 
+/* ----------- HEADER --------- */
+
 .header {
     background-color: #F8F6F7;
     overflow: hidden;
@@ -142,3 +144,8 @@ body {
     border-radius: 50%;
     z-index: 0;
 }
+
+/* ----------- HEADER END --------- */
+
+
+
