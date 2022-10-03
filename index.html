@@ -8,38 +8,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    Задание спринт 1 (сделал что-то)
     <div class="wrapper">
         <header class="header">
             <div class="container">
-                <div class="header-girl"></div>
+                <div class="header__girl"></div>
                 
-                <div class="header-top">
+                <div class="header__top">
                     <a href="/" class="logo">Мир красоты</a>
 
-                    <nav class="navigation">
-                        <ul>
-                            <li><a href="#">Услуги и цены</a></li>
-                            <li><a href="#">Мастера</a></li>
-                            <li><a href="#portfolio">Наши работы</a></li>
-                            <li><a href="#about">О нас</a></li>
-                            <li><a href="#">Контакты</a></li>
+                    <nav class="navigation header__nav">
+                        <ul class="navigation__list">
+                            <li class="navigation__item"><a class="navigation__link" href="#">Услуги и цены</a></li>
+                            <li class="navigation__item"><a class="navigation__link" href="#">Мастера</a></li>
+                            <li class="navigation__item"><a class="navigation__link" href="#portfolio">Наши работы</a></li>
+                            <li class="navigation__item"><a class="navigation__link" href="#about">О нас</a></li>
+                            <li class="navigation__item"><a class="navigation__link" href="#">Контакты</a></li>
                         </ul>
                     </nav>
 
                     <div class="phone-info">
-                        <a href="tel:84996861762">8 (499) 686-17-62</a>
+                        <a class="phone-info__link" href="tel:84996861762">8 (499) 686-17-62</a>
                     </div>
                 </div>
 
-                <div class="header-hero">
-                    <h1>Создай свой образ вместе с нами</h1>
-                    <p>Идеальный образ за 60 минут</p>
-
-                    <button class="btn">Записаться онлайн</button>
+                <div class="header__hero">
+                    <div class="hero">
+                        <h1 class="hero__title">Создай свой образ вместе с нами</h1>
+                        <p class="hero__subtitle">Идеальный образ за 60 минут</p>
+    
+                        <button class="btn">Записаться онлайн</button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -47,25 +49,101 @@
         <main class="main">
             <section id="about" class="section">
                 <div class="container">
-                    <div class="section-header">
-                        <h2 class="section-title">О салоне</h2>
+                    <div class="section__header">
+                        <h2 class="section__title">О салоне</h2>
                     </div>
     
-                    <div class="section-inner">
-                        Section content
+                    <div class="section__inner">
+                        <div class="hero">
+                            <h1 class="hero__title">Создай свой образ вместе с нами</h1>
+                            <p class="hero__subtitle">Идеальный образ за 60 минут</p>
+        
+                            <button class="btn">Записаться онлайн</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section">
+                <div class="container">
+                    <div class="section__header">
+                        <h2 class="section__title">Популярные услуги</h2>
+                    </div>
+    
+                    <div class="section__inner">
+                        <div class="row services">
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="service">
+                                    <div class="service__picture">
+                                        <img class="service__img" src="https://www.tutorialwalk.com/img/banner/bootstrap.jpg" alt="">
+                                    </div>
+
+                                    <h4 class="service__title">Маникюр</h4>
+                                    <p class="service__descr">Аппаратный, комбинированный или классический.</p>
+                                    <button class="btn">Записаться</button>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="service">
+                                    <div class="service__picture">
+                                        <img class="service__img" src="https://www.tutorialwalk.com/img/banner/bootstrap.jpg" alt="">
+                                    </div>
+
+                                    <h4 class="service__title">Маникюр</h4>
+                                    <p class="service__descr">Аппаратный, комбинированный или классический.</p>
+                                    <button class="btn">Записаться</button>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="service">
+                                    <div class="service__picture">
+                                        <img class="service__img" src="https://www.tutorialwalk.com/img/banner/bootstrap.jpg" alt="">
+                                    </div>
+
+                                    <h4 class="service__title">Маникюр</h4>
+                                    <p class="service__descr">Аппаратный, комбинированный или классический.</p>
+                                    <button class="btn">Записаться</button>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="service">
+                                    <div class="service__picture">
+                                        <img class="service__img" src="https://www.tutorialwalk.com/img/banner/bootstrap.jpg" alt="">
+                                    </div>
+
+                                    <h4 class="service__title">Маникюр</h4>
+                                    <p class="service__descr">Аппаратный, комбинированный или классический.</p>
+                                    <button class="btn">Записаться</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="masters" class="section section--grey">
+                <div class="container">
+                    <div class="section__header">
+                        <h2 class="section__title">Мастера</h2>
+                    </div>
+    
+                    <div class="section__inner">
+                        Мастера
                     </div>
                 </div>
             </section>
 
             <section id="portfolio" class="section">
                 <div class="container">
-                    <div class="section-header">
-                        <h2 class="section-title">Наши работы</h2>
-    
-                        <div class="section-actions">кнопки</div>
+                    <div class="section__header">
+                        <h2 class="section__title">Наши работы</h2>
+                        <div class="section__actions">кнопки</div>
                     </div>
     
-                    <div class="section-inner">
+                    <div class="section__inner">
                         Section content
                     </div>
                 </div>
@@ -73,7 +151,20 @@
         </main>
 
         <footer class="footer">
-            Footer
+            <div class="container">
+                Footer
+                <a href="/" class="logo">Мир красоты</a>
+
+                <nav class="navigation footer__nav">
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><a class="navigation__link" href="#">Услуги и цены</a></li>
+                        <li class="navigation__item"><a class="navigation__link" href="#">Мастера</a></li>
+                        <li class="navigation__item"><a class="navigation__link" href="#portfolio">Наши работы</a></li>
+                        <li class="navigation__item"><a class="navigation__link" href="#about">О нас</a></li>
+                        <li class="navigation__item"><a class="navigation__link" href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
         </footer>
     </div>
 </body>

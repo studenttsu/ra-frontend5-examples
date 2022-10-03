@@ -14,6 +14,7 @@ body {
     margin: 0;
     font: 16px 'Montserrat', sans-serif;
     color: #333;
+    min-width: 320px;
 }
 
 .wrapper {
@@ -39,14 +40,20 @@ body {
     padding: 50px 0;
 }
 
-.section-header {
+.section--grey {
+    background-color: #F8F6F7;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.section__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 32px;
 }
 
-.section-title {
+.section__title {
     margin: 0;
 }
 
@@ -61,7 +68,7 @@ body {
     position: relative;
 }
 
-.header-top {
+.header__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,7 +82,7 @@ body {
     font-weight: bold;
 }
 
-.navigation ul {
+.navigation__list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -83,39 +90,41 @@ body {
     flex-wrap: wrap;
 }
 
-.navigation li:not(:last-child) {
+.navigation__item:not(:last-child) {
     margin-right: 28px;
 }
 
-.navigation a {
+.navigation__link {
     font-weight: 500;
     font-size: 14px;
     transition: 0.15s color;
 }
 
-.navigation a:hover {
+.navigation__link:hover {
     color: #00BF78;
 }
 
-.phone-info a {
+.phone-info__link {
     font-size: 18px;
     font-weight: 500;
 }
 
-.phone-info a,
-.navigation a,
+.phone-info__link,
+.navigation__link,
 .logo {
     text-decoration: none;
     color: #333;
 }
 
-.header-hero {
-    max-width: 540px;
+.header__hero {
+    width: 540px;
     padding-top: 90px;
     padding-bottom: 130px;
+    position: relative;
+    z-index: 3;
 }
 
-.header-girl {
+.header__girl {
     width: 524px;
     height: 510px;
     position: absolute;
@@ -123,7 +132,7 @@ body {
     right: 80px;
 }
 
-.header-girl:after {
+.header__girl:after {
     content: '';
     background: url('./images/girl.png');
     width: 100%;
@@ -133,7 +142,7 @@ body {
     z-index: 1;
 }
 
-.header-girl:before {
+.header__girl:before {
     content: '';
     width: 472px;
     height: 472px;
@@ -147,5 +156,50 @@ body {
 
 /* ----------- HEADER END --------- */
 
+.services {
+    margin-top: -40px;
+}
+
+.services > div {
+    margin-top: 40px;
+}
+
+.service__picture {
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.service__img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
 
 
+/* Large Devices, Wide Screens */ 
+@media only screen and (max-width: 1280px) { 
+} 
+/* Medium Devices, Desktops */ 
+@media only screen and (max-width: 992px) { 
+    .header__girl {
+        opacity: 0.4;
+    }
+} 
+/* Small Devices, Tablets */ 
+@media only screen and (max-width: 768px) { 
+    .header__top {
+        flex-direction: column;
+    }
+
+    .header__nav .navigation__list {
+        justify-content: center;
+    }
+} 
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width: 480px) {
+
+} 
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width: 320px) { 
+}
