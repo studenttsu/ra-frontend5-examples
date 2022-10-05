@@ -1,0 +1,17 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body, .wrapper {
+    height: 100%;
+}
+
+body {
+    font: 16px 'Montserrat', sans-serif;
+    color: #333;
+    min-width: 320px;
+}

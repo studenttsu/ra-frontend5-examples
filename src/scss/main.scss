@@ -1,20 +1,11 @@
-html {
-    box-sizing: border-box;
-}
+@import 'common';
+@import 'libs';
+@import 'mixins';
 
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+$grey: #F8F6F7;
 
-html, body, .wrapper {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font: 16px 'Montserrat', sans-serif;
-    color: #333;
-    min-width: 320px;
+:root {
+    --grey: #F8F6F7;
 }
 
 .wrapper {
@@ -38,23 +29,28 @@ body {
 
 .section {
     padding: 50px 0;
-}
 
-.section--grey {
-    background-color: #F8F6F7;
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
+    &--grey {
+        background-color: $grey;
+        background-color: var(--grey);
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
 
-.section__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
-}
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+    }
 
-.section__title {
-    margin: 0;
+    &__title {
+        margin: 0;
+
+        @include isMobile {
+            font-size: 72px;
+        }
+    }
 }
 
 /* ----------- HEADER --------- */
@@ -82,26 +78,28 @@ body {
     font-weight: bold;
 }
 
-.navigation__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
+.navigation {
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-.navigation__item:not(:last-child) {
-    margin-right: 28px;
-}
+    &__item:not(:last-child) {
+        margin-right: 28px;
+    }
 
-.navigation__link {
-    font-weight: 500;
-    font-size: 14px;
-    transition: 0.15s color;
-}
+    &__link {
+        font-weight: 500;
+        font-size: 14px;
+        transition: 0.15s color;
 
-.navigation__link:hover {
-    color: #00BF78;
+        &:hover {
+            color: #00BF78;
+        }
+    }
 }
 
 .phone-info__link {
@@ -134,7 +132,7 @@ body {
 
 .header__girl:after {
     content: '';
-    background: url('./images/girl.png');
+    background: url('../images/girl.png');
     width: 100%;
     height: 100%;
     display: block;
@@ -176,30 +174,4 @@ body {
     object-fit: cover;
 }
 
-
-/* Large Devices, Wide Screens */ 
-@media only screen and (max-width: 1280px) { 
-} 
-/* Medium Devices, Desktops */ 
-@media only screen and (max-width: 992px) { 
-    .header__girl {
-        opacity: 0.4;
-    }
-} 
-/* Small Devices, Tablets */ 
-@media only screen and (max-width: 768px) { 
-    .header__top {
-        flex-direction: column;
-    }
-
-    .header__nav .navigation__list {
-        justify-content: center;
-    }
-} 
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width: 480px) {
-
-} 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width: 320px) { 
-}
+@import 'media';
