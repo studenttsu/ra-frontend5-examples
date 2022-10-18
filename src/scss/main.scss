@@ -58,6 +58,42 @@ $grey: #F8F6F7;
 .header {
     background-color: #F8F6F7;
     overflow: hidden;
+
+    &__nav.mobile-open {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding: 20px;
+        z-index: 999;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+
+        .navigation {
+            &__list {
+                flex-direction: column;
+            }
+            
+            &__item {
+                width: 100%;
+                margin: 0 0 15px;
+            }
+
+            &__link {
+                font-size: 18px;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    &__hero {
+        display: none;
+    }
 }
 
 .header .container {
@@ -214,6 +250,29 @@ $grey: #F8F6F7;
 
 .favorite {
     font-weight: 500;
+}
+
+.hamb {
+    padding: 0;
+    border: none;
+    background: none;
+
+    span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background-color: #000;
+        border-radius: 5px;
+
+        margin: 4px 0;
+    }
+
+    &.active {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        z-index: 99999;
+    }
 }
 
 @import 'media';

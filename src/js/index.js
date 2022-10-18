@@ -1,3 +1,10 @@
+document.querySelector('#mobile-menu-hamb')
+    .addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.header__nav').classList.toggle('mobile-open');
+    });
+
+
 // JS - однопоточный
 // синхронные и асинхронные
 
