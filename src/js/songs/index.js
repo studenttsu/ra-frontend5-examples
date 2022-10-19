@@ -1,4 +1,5 @@
 import { SongsApp } from './app.js';
+import 'jquery';
 
 const songsMockData = [
     {
