@@ -1,5 +1,4 @@
 import React from "react";
-
 interface EmployeeCardProps {
     employee: any;
     onInfoMain: () => void;
