@@ -1,40 +1,35 @@
-import React, { useMemo } from 'react';
+import { Outlet, Navigate, Link, useLocation } from 'react-router-dom';
 import './App.css';
 
-import { EmployeeCard } from './components/EmployeeCard';
-import { AuthForm } from './components/AuthForm';
 import { useAuth } from './contexts/AuthContext';
 
 function App() {
-  const { isAuth, login, logout } = useAuth();
+  const { isAuth, logout } = useAuth();
+  const location = useLocation();
 
-  const employees = useMemo<any[]>(() => {
-    return [
-      {
-        id: 1,
-        photo: 'https://i.pinimg.com/736x/f8/c8/1d/f8c81d920fb1d9756b766300c9bbc78e.jpg',
-        name: 'Анжела',
-        position: 'Маникюрщица'
-      }
-    ];
-  }, []);
+  if (!isAuth) {
+    return <Navigate to="/login" />;
+  }
 
   return (
-    <div style={{ display: 'flex', gap: 30 }}>
+    <>
       {isAuth && (
         <header>
+          <nav>
+            <ul className="navigation">
+              <li className={location.pathname === '/' ? 'active' : undefined}><Link to="/">Записи</Link></li>
+              <li className={location.pathname === '/employees' ? 'active' : undefined}><Link to="/employees">Сотрудники</Link></li>
+            </ul>
+          </nav>
+
           <button onClick={logout}>Logout</button>
         </header>
       )}
 
-      {isAuth ? (
-        (
-          employees.map(employee => 
-            <EmployeeCard key={employee.id} employee={employee} onInfoMain={() => console.log('OnInfo')} />
-          )
-        )
-      ) : <AuthForm onLogin={login} />}
-    </div>
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 }
 
