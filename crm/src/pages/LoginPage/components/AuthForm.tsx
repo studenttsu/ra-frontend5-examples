@@ -1,8 +1,8 @@
 import { FormEventHandler, useState, useRef, useEffect } from "react";
-import { AuthData } from "../common/interfaces/AuthData";
+import { AuthDataDto } from "../../../common/dto/AuthData";
 
 interface AuthFormProps {
-    onLogin: (authData: AuthData) => void;
+    onLogin: (authData: AuthDataDto) => void;
 }
 
 export function AuthForm(props: AuthFormProps) {

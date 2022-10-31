@@ -1,39 +1,31 @@
-import React, { useMemo } from 'react';
+import { Outlet, Link, Navigate } from 'react-router-dom';
 import './App.css';
 
-import { EmployeeCard } from './components/EmployeeCard';
-import { AuthForm } from './components/AuthForm';
 import { useAuth } from './contexts/AuthContext';
 
 function App() {
-  const { isAuth, login, logout } = useAuth();
+  const { isAuth, logout } = useAuth();
 
-  const employees = useMemo<any[]>(() => {
-    return [
-      {
-        id: 1,
-        photo: 'https://i.pinimg.com/736x/f8/c8/1d/f8c81d920fb1d9756b766300c9bbc78e.jpg',
-        name: 'Анжела',
-        position: 'Маникюрщица'
-      }
-    ];
-  }, []);
+  if (!isAuth) {
+    return <Navigate to="/login" />;
+  }
 
   return (
-    <div style={{ display: 'flex', gap: 30 }}>
+    <div className="App">
       {isAuth && (
         <header>
+          <nav>
+            <ul>
+              <li><Link to="/">Записи</Link></li>
+              <li><Link to="/employees?name=dawsdqwd&phone=8213771283">Сотрудники</Link></li>
+            </ul>
+          </nav>
+
           <button onClick={logout}>Logout</button>
         </header>
       )}
 
-      {isAuth ? (
-        (
-          employees.map(employee => 
-            <EmployeeCard key={employee.id} employee={employee} onInfoMain={() => console.log('OnInfo')} />
-          )
-        )
-      ) : <AuthForm onLogin={login} />}
+      <Outlet />
     </div>
   );
 }

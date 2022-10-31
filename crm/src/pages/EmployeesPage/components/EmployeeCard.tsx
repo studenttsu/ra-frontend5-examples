@@ -1,11 +1,13 @@
 import React from "react";
+import { StaffDto } from "../../../api/EmployeesApi";
+
 interface EmployeeCardProps {
-    employee: any;
+    employee: StaffDto;
     onInfoMain: () => void;
 }
 
 export function EmployeeCard(props: EmployeeCardProps) {
-    const { photo, name, position } = props.employee;
+    const { photo, fullName, position } = props.employee;
 
     const handleClick = () => {
         console.log('handle click');
@@ -26,7 +28,7 @@ export function EmployeeCard(props: EmployeeCardProps) {
                 src={photo} alt="" />
             </div>
 
-            <div className="employee-card__name">{name}</div>
+            <div className="employee-card__name">{fullName}</div>
             <p className="employee-card__position">{position}</p>
             <button onClick={handleClick}>Подробнее</button>
         </div>
