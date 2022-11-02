@@ -1,13 +1,13 @@
 import 'slick-carousel/slick/slick';
-import "@fancyapps/ui";
+import '@fancyapps/ui';
 import $ from 'jquery';
 
 import ApiService from './services/ApiService';
 
 function init() {
     $('.slider').slick({
-        slidesToShow: 4,
-        prevArrow: '.slider-prev',
+                        slidesToShow: 4,
+                prevArrow: '.slider-prev',
         nextArrow: '.slider-next',
         infinite: false
     });
@@ -19,7 +19,6 @@ function init() {
         phone: '+7 999 999-99-99'
     };
 
-
     fetch(`${API_PATH}/orders`, {
         method: 'POST',
         body: JSON.stringify(order)
@@ -27,7 +26,6 @@ function init() {
         .then(() => {
             console.log('Successful');
         });
-
 
     async function makeRequests() {
         const { access_token } = await ApiService.login({

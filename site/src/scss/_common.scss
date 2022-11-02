@@ -2,16 +2,20 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
-html, body, .wrapper {
+html,
+body,
+.wrapper {
     height: 100%;
 }
 
 body {
-    font: 16px 'Montserrat', sans-serif;
-    color: #333;
+    font: 16px Montserrat, sans-serif;
+    color: #fff;
     min-width: 320px;
 }
