@@ -10,10 +10,9 @@ class ApiService extends HttpService {
         return fetch(`${API_PATH}/orders`, {
             method: 'GET',
             headers: {
-                Authorization: `Bearer ${access_token}`
-            }
-        })
-            .then(response => response.json());
+                Authorization: `Bearer ${access_token}`,
+            },
+        }).then((response) => response.json());
     }
 }
 
