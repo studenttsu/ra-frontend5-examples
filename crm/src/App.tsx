@@ -1,10 +1,15 @@
+import { useEffect } from 'react';
 import { Outlet, Link, Navigate } from 'react-router-dom';
 import './App.css';
 
 import { useAuth } from './contexts/AuthContext';
 
 function App() {
-  const { isAuth, logout } = useAuth();
+  const { isAuth, logout, checkAuth } = useAuth();
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
 
   if (!isAuth) {
     return <Navigate to="/login" />;

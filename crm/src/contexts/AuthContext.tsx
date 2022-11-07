@@ -10,6 +10,7 @@ interface AuthContextValue {
     isAuth: boolean;
     login: (authData: AuthDataDto) => void;
     logout: () => void;
+    checkAuth: () => void;
 }
 
 const AuthContext = createContext<AuthContextValue>(null!);
@@ -30,7 +31,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     };
 
-    const logout = () => {
+    const checkAuth = async () => {
+        try {
+            const response = await AppApi.refesh();
+            TokenService.setToken(response.access_token);
+            setIsAuth(true);
+            navigate('/');
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
+    const logout = async () => {
+        await AppApi.logout();
         TokenService.removeToken();
         setIsAuth(false);
         navigate('/login');
@@ -38,7 +51,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     PubSub.on('logout', logout);
 
-    const context = { isAuth, login, logout };
+    const context = { isAuth, login, logout, checkAuth };
 
     return (
         <AuthContext.Provider value={context}>

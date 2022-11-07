@@ -6,6 +6,14 @@ class AppApi extends HttpService {
     login(authData: AuthDataDto): Promise<TokenDto> {
         return this.post('login', authData);
     }
+
+    refesh() {
+        return this.get('refresh');
+    }
+
+    logout() {
+        return this.post('logout');
+    }
 }
 
 export default new AppApi();
